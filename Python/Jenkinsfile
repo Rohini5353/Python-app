@@ -9,8 +9,7 @@ pipeline {
         stage('Step 1: Install Dependencies') {
             steps {
                 script {
-                    sh 'chmod -R 777 /root/.local'
-                    sh 'sudo pip install flask'
+                    sh 'sudo pip install --user flask'
                 }
             }
         }
