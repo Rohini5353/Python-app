@@ -6,12 +6,7 @@ pipeline {
     }
 
     stages {
-        stage('Step 1: Checkout Code from GitHub') {
-            steps {
-                git branch: 'main', url: 'https://github.com/your-username/python-jenkins-webapp.git'
-            }
-        }
-
+        stage('Step 1: Checkout Code from GitHub') 
         stage('Step 2: Install Dependencies') {
             steps {
                 script {
