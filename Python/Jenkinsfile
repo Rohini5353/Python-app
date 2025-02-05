@@ -9,7 +9,7 @@ pipeline {
         stage('Step 1: Install Dependencies') {
             steps {
                 script {
-                    sh 'sudo pip install --user flask'
+                    sh 'pip install --user flask'
                 }
             }
         }
