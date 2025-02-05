@@ -6,8 +6,7 @@ pipeline {
     }
 
     stages {
-        stage('Step 1: Checkout Code from GitHub') 
-        stage('Step 2: Install Dependencies') {
+        stage('Step 1: Install Dependencies') {
             steps {
                 script {
                     sh 'pip install flask'
@@ -15,7 +14,7 @@ pipeline {
             }
         }
 
-        stage('Step 3: Run Flask App') {
+        stage('Step 2: Run Flask App') {
             steps {
                 script {
                     sh 'nohup python app.py > output.log 2>&1 &'
@@ -23,7 +22,7 @@ pipeline {
             }
         }
 
-        stage('Step 4: Verify App is Running') {
+        stage('Step 3: Verify App is Running') {
             steps {
                 script {
                     sh 'curl -s http://localhost:5000'
