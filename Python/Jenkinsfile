@@ -9,6 +9,8 @@ pipeline {
         stage('Step 1: Install Dependencies') {
             steps {
                 script {
+                    sh 'mkdir -p /root/.local'  // Create the directory if it doesn't exist
+                    sh 'chmod -R 777 /root/.local'  // Set write permissions for the directory
                     sh 'pip install --user flask'
                 }
             }
